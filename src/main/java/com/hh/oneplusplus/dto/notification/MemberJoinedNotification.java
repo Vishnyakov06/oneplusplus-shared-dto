@@ -11,8 +11,8 @@ public record MemberJoinedNotification(
         Instant createdAt,
         Long eventId,
         String eventTitle,
-        Long memberId,
-        String memberName,
-        String memberSurname
+        Long joinedUserId,
+        String joinedUserName,
+        String joinedUserSurname
 ) implements NotificationEvent {
 }

@@ -11,8 +11,8 @@ public record MemberLeftNotification(
         Instant createdAt,
         Long eventId,
         String eventTitle,
-        Long memberId,
-        String memberName,
-        String memberSurname
+        Long leftUserId,
+        String leftUserName,
+        String leftUserSurname
 ) implements NotificationEvent {
 }

@@ -13,4 +13,8 @@ public record WelcomeNotification(
         String userName,
         String userSurname
 ) implements NotificationEvent{
+    @Override
+    public NotificationEventType eventType() {
+        return NotificationEventType.WELCOME;
+    }
 }

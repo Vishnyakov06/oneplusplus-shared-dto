@@ -12,4 +12,8 @@ public record EventUpdatedNotification(
         Long eventId,
         String eventTitle
 ) implements NotificationEvent{
+    @Override
+    public NotificationEventType eventType() {
+        return NotificationEventType.EVENT_UPDATED;
+    }
 }

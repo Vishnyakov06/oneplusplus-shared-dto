@@ -15,4 +15,8 @@ public record MemberJoinedNotification(
         String joinedUserName,
         String joinedUserSurname
 ) implements NotificationEvent {
+    @Override
+    public NotificationEventType eventType() {
+        return NotificationEventType.MEMBER_JOINED;
+    }
 }

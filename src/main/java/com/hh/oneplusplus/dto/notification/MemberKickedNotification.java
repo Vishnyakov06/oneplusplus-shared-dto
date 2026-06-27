@@ -12,4 +12,8 @@ public record MemberKickedNotification(
         Long eventId,
         String eventTitle
 )implements NotificationEvent{
+    @Override
+    public NotificationEventType eventType() {
+        return NotificationEventType.MEMBER_KICKED;
+    }
 }

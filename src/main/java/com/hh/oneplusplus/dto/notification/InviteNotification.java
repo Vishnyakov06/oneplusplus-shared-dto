@@ -13,4 +13,8 @@ public record InviteNotification(
         String eventTitle,
         String inviteUrl
 ) implements NotificationEvent{
+    @Override
+    public NotificationEventType eventType() {
+        return NotificationEventType.INVITE;
+    }
 }

@@ -15,4 +15,8 @@ public record MemberLeftNotification(
         String leftUserName,
         String leftUserSurname
 ) implements NotificationEvent {
+    @Override
+    public NotificationEventType eventType() {
+        return NotificationEventType.MEMBER_LEFT;
+    }
 }

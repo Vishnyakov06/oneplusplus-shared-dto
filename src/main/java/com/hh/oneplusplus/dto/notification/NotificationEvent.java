@@ -8,5 +8,6 @@ public interface NotificationEvent {
     Long userId();
     String email();
     NotificationType type();
+    NotificationEventType eventType();
     Instant createdAt();
 }

@@ -1,6 +1,7 @@
 package com.hh.oneplusplus.dto.notification;
 
 import java.time.Instant;
+import java.util.Map;
 import java.util.UUID;
 
 public record MemberLeftNotification(
@@ -11,12 +12,20 @@ public record MemberLeftNotification(
         Instant createdAt,
         Long eventId,
         String eventTitle,
-        Long leftUserId,
-        String leftUserName,
-        String leftUserSurname
+        ActorDto actor
 ) implements NotificationEvent {
+
     @Override
     public NotificationEventType eventType() {
         return NotificationEventType.MEMBER_LEFT;
+    }
+
+    @Override
+    public Map<String, Object> params() {
+        return Map.of(
+                "eventId", eventId,
+                "eventTitle", eventTitle,
+                "actor", actor
+        );
     }
 }

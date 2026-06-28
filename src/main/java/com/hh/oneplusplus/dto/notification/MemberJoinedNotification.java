@@ -1,6 +1,7 @@
 package com.hh.oneplusplus.dto.notification;
 
 import java.time.Instant;
+import java.util.Map;
 import java.util.UUID;
 
 public record MemberJoinedNotification(
@@ -11,12 +12,20 @@ public record MemberJoinedNotification(
         Instant createdAt,
         Long eventId,
         String eventTitle,
-        Long joinedUserId,
-        String joinedUserName,
-        String joinedUserSurname
+        ActorDto actor
 ) implements NotificationEvent {
+
     @Override
     public NotificationEventType eventType() {
         return NotificationEventType.MEMBER_JOINED;
+    }
+
+    @Override
+    public Map<String, Object> params() {
+        return Map.of(
+                "eventId", eventId,
+                "eventTitle", eventTitle,
+                "actor", actor
+        );
     }
 }

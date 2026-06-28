@@ -1,6 +1,7 @@
 package com.hh.oneplusplus.dto.notification;
 
 import java.time.Instant;
+import java.util.Map;
 import java.util.UUID;
 
 public record InviteNotification(
@@ -16,5 +17,13 @@ public record InviteNotification(
     @Override
     public NotificationEventType eventType() {
         return NotificationEventType.INVITE;
+    }
+    @Override
+    public Map<String, Object> params() {
+        return Map.of(
+                "eventId", eventId,
+                "eventTitle", eventTitle,
+                "inviteUrl", inviteUrl
+        );
     }
 }

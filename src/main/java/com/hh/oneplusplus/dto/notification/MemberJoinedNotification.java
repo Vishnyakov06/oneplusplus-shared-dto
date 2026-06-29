@@ -1,5 +1,7 @@
 package com.hh.oneplusplus.dto.notification;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.Instant;
 import java.util.Map;
 import java.util.UUID;
@@ -21,6 +23,7 @@ public record MemberJoinedNotification(
     }
 
     @Override
+    @JsonIgnore
     public Map<String, Object> getParams() {
         return Map.of(
                 "eventId", eventId,

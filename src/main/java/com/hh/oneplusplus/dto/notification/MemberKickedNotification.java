@@ -15,15 +15,39 @@ public record MemberKickedNotification(
 ) implements NotificationEvent {
 
     @Override
-    public NotificationEventType eventType() {
+    public NotificationEventType getEventType() {
         return NotificationEventType.MEMBER_KICKED;
     }
 
     @Override
-    public Map<String, Object> params() {
+    public Map<String, Object> getParams() {
         return Map.of(
                 "eventId", eventId,
                 "eventTitle", eventTitle
         );
+    }
+    @Override
+    public UUID getNotificationId() {
+        return notificationId;
+    }
+
+    @Override
+    public Long getUserId() {
+        return userId;
+    }
+
+    @Override
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public NotificationType getType() {
+        return type;
+    }
+
+    @Override
+    public Instant getCreatedAt() {
+        return createdAt;
     }
 }

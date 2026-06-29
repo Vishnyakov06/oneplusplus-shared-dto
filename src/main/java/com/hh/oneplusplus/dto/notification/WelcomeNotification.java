@@ -15,15 +15,39 @@ public record WelcomeNotification(
 ) implements NotificationEvent {
 
     @Override
-    public NotificationEventType eventType() {
+    public NotificationEventType getEventType() {
         return NotificationEventType.WELCOME;
     }
 
     @Override
-    public Map<String, Object> params() {
+    public Map<String, Object> getParams() {
         return Map.of(
                 "userName", userName,
                 "userSurname", userSurname
         );
+    }
+    @Override
+    public UUID getNotificationId() {
+        return notificationId;
+    }
+
+    @Override
+    public Long getUserId() {
+        return userId;
+    }
+
+    @Override
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public NotificationType getType() {
+        return type;
+    }
+
+    @Override
+    public Instant getCreatedAt() {
+        return createdAt;
     }
 }

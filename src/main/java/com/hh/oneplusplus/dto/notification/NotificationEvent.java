@@ -5,11 +5,11 @@ import java.util.Map;
 import java.util.UUID;
 
 public interface NotificationEvent {
-    UUID notificationId();
-    Long userId();
-    String email();
-    NotificationType type();
-    NotificationEventType eventType();
-    Instant createdAt();
-    Map<String, Object> params();
+    UUID getNotificationId();
+    Long getUserId();
+    String getEmail();
+    NotificationType getType();
+    NotificationEventType getEventType();
+    Instant getCreatedAt();
+    Map<String, Object> getParams();
 }

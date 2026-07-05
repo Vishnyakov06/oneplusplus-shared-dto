@@ -14,7 +14,7 @@ public record InviteNotification(
         Instant createdAt,
         Long eventId,
         String eventTitle,
-        String inviteUrl
+        String inviteToken
 ) implements NotificationEvent{
     @Override
     public NotificationEventType getEventType() {
@@ -26,7 +26,7 @@ public record InviteNotification(
         return Map.of(
                 "eventId", eventId,
                 "eventTitle", eventTitle,
-                "inviteUrl", inviteUrl
+                "inviteToken", inviteToken
         );
     }
     @Override

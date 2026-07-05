@@ -1,5 +1,7 @@
 package com.hh.oneplusplus.dto.notification;
 
+import java.util.Set;
+
 public enum NotificationEventType {
     EVENT_DELETED,
     EVENT_UPDATED,
@@ -7,5 +9,10 @@ public enum NotificationEventType {
     MEMBER_JOINED,
     MEMBER_KICKED,
     MEMBER_LEFT,
-    WELCOME
+    WELCOME;
+
+    public static final Set<String> GROUPABLE_TYPES = Set.of(
+            MEMBER_JOINED.name(),
+            MEMBER_LEFT.name()
+    );
 }

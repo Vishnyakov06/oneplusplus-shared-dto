@@ -5,7 +5,8 @@ import java.util.Set;
 public enum NotificationEventType {
     EVENT_DELETED,
     EVENT_UPDATED,
-    INVITE,
+    INVITE_WEB,
+    INVITE_MAI,
     MEMBER_JOINED,
     MEMBER_KICKED,
     MEMBER_LEFT,

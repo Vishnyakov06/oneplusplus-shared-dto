@@ -6,8 +6,9 @@ public enum NotificationEventType {
     EVENT_DELETED,
     EVENT_UPDATED,
     INVITE_WEB,
-    INVITE_MAI,
+    INVITE_MAIL,
     MEMBER_JOINED,
+    INVITE,
     MEMBER_KICKED,
     MEMBER_LEFT,
     WELCOME;

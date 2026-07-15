@@ -16,8 +16,8 @@ public record JoinRequestResolvedNotification(
         Long eventId,
         String eventTitle,
         Long joinRequestId,
-        JoinRequestResolution resolution,
-        String rejectionReason
+        JoinRequestDecision decision,
+        String comment
 ) implements NotificationEvent {
 
     @Override
@@ -57,8 +57,8 @@ public record JoinRequestResolvedNotification(
         params.put("eventId", eventId);
         params.put("eventTitle", eventTitle);
         params.put("joinRequestId", joinRequestId);
-        params.put("resolution", resolution);
-        params.put("rejectionReason", rejectionReason);
+        params.put("decision", decision);
+        params.put("comment", comment);
         return params;
     }
 }

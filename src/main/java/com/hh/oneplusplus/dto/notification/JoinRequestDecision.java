@@ -1,6 +1,6 @@
 package com.hh.oneplusplus.dto.notification;
 
-public enum JoinRequestResolution {
+public enum JoinRequestDecision {
     REJECTED,
     APPROVED
 }

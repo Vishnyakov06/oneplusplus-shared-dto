@@ -9,10 +9,14 @@ public enum NotificationEventType {
     INVITE,
     MEMBER_KICKED,
     MEMBER_LEFT,
-    WELCOME;
+    WELCOME,
+    JOIN_REQUEST_SUBMITTED,
+    JOIN_REQUEST_RESOLVED;
+
 
     public static final Set<String> GROUPABLE_TYPES = Set.of(
             MEMBER_JOINED.name(),
-            MEMBER_LEFT.name()
+            MEMBER_LEFT.name(),
+            JOIN_REQUEST_SUBMITTED.name()
     );
 }

@@ -11,7 +11,8 @@ public enum NotificationEventType {
     MEMBER_LEFT,
     WELCOME,
     JOIN_REQUEST_SUBMITTED,
-    JOIN_REQUEST_RESOLVED;
+    JOIN_REQUEST_APPROVED,
+    JOIN_REQUEST_REJECTED;
 
 
     public static final Set<String> GROUPABLE_TYPES = Set.of(

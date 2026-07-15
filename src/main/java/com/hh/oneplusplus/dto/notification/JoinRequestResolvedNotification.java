@@ -42,9 +42,11 @@ public record JoinRequestResolvedNotification(
 
     @Override
     public NotificationEventType getEventType() {
-        return NotificationEventType.JOIN_REQUEST_RESOLVED;
+        return switch (decision) {
+            case APPROVED -> NotificationEventType.JOIN_REQUEST_APPROVED;
+            case REJECTED -> NotificationEventType.JOIN_REQUEST_REJECTED;
+        };
     }
-
     @Override
     public Instant getCreatedAt() {
         return createdAt;
